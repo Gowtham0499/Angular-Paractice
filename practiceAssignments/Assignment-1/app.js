@@ -12,14 +12,12 @@
       $scope.checkMenu = function(){
         var menu = $scope.lunchMenu;
         var menuArray = menu.split(',');
-        console.log(menuArray);
         var count = 0;
-        for(var i=1; i<=menuArray.length; i++){
-          if(menuArray[i]!=null){
-            count+=1;
+        menuArray.forEach((item) => {
+          if(item!=""){
+            ++count;
           }
-        }
-        console.log(count);
+        });
         if(count<4){
           $scope.message = "Enjoy!";
         } else {
