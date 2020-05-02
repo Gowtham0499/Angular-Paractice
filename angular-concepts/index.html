@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Angular 1 minified -->
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>learn Angular</title>
+  </head>
+  <!-- Initialize ng App -->
+  <body ng-app="angularconcepts">
+    <h1>Angular App</h1><br>
+    <!-- Initializing ng Controller -->
+    <div ng-controller="myController">
+      <!-- Interpolation or data binding -->
+      Original Message: {{message}} <br>
+      Message UpperCase: {{messageUpper()}} <br>
+      Message hate by Custom Filter: {{hatemessage()}} <br>
+      <!-- Used replace filter in controller and used chaining filters -->
+      Message hate by replace Filter: {{message | replace: love: hate | uppercase}} <br>
+    </div>
+  </body>
+</html>
