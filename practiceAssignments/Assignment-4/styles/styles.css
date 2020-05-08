@@ -1,0 +1,27 @@
+body{
+  font-family:'Open Sans', sans-serif;
+  background:#151837;
+  width:90%;
+  margin:0 auto;
+  padding:2em 0 6em;
+}
+h1, h2, h3{
+  font-size:3em;
+  color:#fefefe;
+  text-align: center;
+}
+a {
+  font-size: 1.2em;
+}
+.home-link {
+  background-color: #3FA09D;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 4px;
+}
+table {
+  font-size: 1.2em;
+  background-color: aliceblue;
+}

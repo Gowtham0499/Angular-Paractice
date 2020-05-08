@@ -1,0 +1,22 @@
+<div class="container">
+<h3>Items Page</h3><br>
+</div>
+<!-- <ul>
+    <li ng-repeat="item in listcontroller.items">
+        {{ item.name }} | {{ item.description }}
+    </li>
+</ul> -->
+<div class="container">
+<table class="table table-hover">
+    <tr>
+        <th>Item Name</th>
+        <th>Item Description</th>
+        <th>Item Price</th>
+    </tr>
+    <tr ng-repeat="item in listcontroller.items">
+        <td>{{ item.name }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.price_large }}</td>
+    </tr>
+</table>
+</div>
