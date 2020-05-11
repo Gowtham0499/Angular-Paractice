@@ -49,7 +49,7 @@ function routeConfig ($stateProvider) {
     })
     .state('public.signup', {
       url: '/signup',
-      templateUrl: '/src/public/signup/signup.html',
+      templateUrl: 'src/public/signup/signup.html',
       controller: 'SignUpController',
       controllerAs: 'signupCtrl',
       resolve: {
