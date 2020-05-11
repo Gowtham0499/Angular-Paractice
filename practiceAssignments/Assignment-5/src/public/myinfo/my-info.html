@@ -1,0 +1,46 @@
+<div class="container">
+    <div ng-show="!myInfoCtrl.check()">
+        <h1>My Info</h1><br>
+        <h4>Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></h4>
+    </div>
+    <div ng-if="myInfoCtrl.check()">
+        <h1>Your Information</h1><br>
+        <table class="table">
+            <tr>
+                <td>Name</td>
+                <td>{{ myInfoCtrl.user[0].firstName }} {{ myInfoCtrl.user[0].lastName }}</td>
+            </tr>
+            <tr>
+                <td>E Mail</td>
+                <td>{{ myInfoCtrl.user[0].email }}</td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td>{{ myInfoCtrl.user[0].phoneNumber }}</td>
+            </tr>
+            <tr>
+                <td>Favourite Item</td>
+                <td>{{ myInfoCtrl.user[0].favouriteItem }}</td>
+            </tr>
+        </table>
+    </div>
+    <div ng-if="myInfoCtrl.check()" class="menu-item-tile col-md-6">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="menu-item-photo">
+                    <div>{{myInfoCtrl.Item[0].short_name}}</div>
+                  <img class="img-responsive" width="250" height="150"
+                    ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.Item[0].short_name}}.jpg" alt="{{myInfoCtrl.Item[0].name}}">
+                </div>
+                <div class="menu-item-price">{{myInfoCtrl.Item[0].price_small | currency}}<span>
+                    {{myInfoCtrl.Item[0].small_portion_name}}</span> {{myInfoCtrl.Item[0].price_large | currency}}
+                  <span>{{myInfoCtrl.Item[0].large_portion_name}}</span></div>
+              </div>
+            <div class="menu-item-description col-sm-7">
+                <h3 class="menu-item-title">{{myInfoCtrl.Item[0].name}}</h3>
+                <p class="menu-item-details">{{myInfoCtrl.Item[0].description}}</p>
+            </div>
+        </div>
+        <hr class="visible-xs">
+    </div>
+</div>

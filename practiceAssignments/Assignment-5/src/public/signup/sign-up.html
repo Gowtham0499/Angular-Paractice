@@ -1,0 +1,64 @@
+<div class="container">
+    <h1 class="form-title">SignUp to our NewsLetter!</h1>
+</div>
+
+<div class="container" ng-if="signupCtrl.submitted == false">
+    <form name="signUpForm" novalidate>
+        <div class="form-group">
+            <label for="firstName">First Name*</label>
+            <input type="text" class="form-control" name="firstName" placeholder="Enter First Name"
+                ng-model="signupCtrl.user.firstName"
+                required>
+            <span ng-if="signUpForm.firstName.$touched && signUpForm.firstName.$error.required">
+                Firstname is Required
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name*</label>
+            <input type="text" class="form-control" name="lastName" placeholder="Enter Last Name"
+                ng-model="signupCtrl.user.lastName"
+                required>
+            <span ng-if="signUpForm.lastName.$touched && signUpForm.lastName.$error.required">
+                Lastname is Required
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address*</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter Email"
+                ng-model="signupCtrl.user.email"
+                required>
+            <span ng-if="signUpForm.email.$touched && signUpForm.email.$error.required">
+                Email is Required
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number*</label>
+            <input type="text" class="form-control" name="phoneNumber" placeholder="Enter Phone Number"
+                ng-model="signupCtrl.user.phoneNumber"
+                pattern="(\d{10})"
+                required>
+            <span ng-if="signUpForm.phoneNumber.$invalid && signUpForm.phoneNumber.$touched">
+                Phone Number should be 10 digits
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="favouriteItem">Favourite Item*</label>
+            <input type="text" class="form-control" name="favouriteItem" placeholder="Enter Fourite Menu Item Short Name"
+                ng-model="signupCtrl.user.favouriteItem"
+                required>
+            <span ng-if="signUpForm.favouriteItem.$touched && signUpForm.favouriteItem.$error.required">
+               Favourite Item ShortName is Required.
+            </span>
+            <span ng-if="signUpForm.favouriteItem.$touched && !signupCtrl.shortNames.includes(signupCtrl.user.favouriteItem)">
+               No Menu Item Found
+            </span>
+        </div>
+        <button type="button" class="btn btn-primary" ng-disabled="signUpForm.$invalid" ng-click="signupCtrl.submit()">Submit</button>
+    </form>
+</div>
+
+<div class="container">
+    <div ng-if="signupCtrl.submitted">
+        <h1 class="submitted">Your Information has been saved!</h1>
+    </div>
+</div>
